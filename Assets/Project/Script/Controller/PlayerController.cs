@@ -24,6 +24,7 @@ public class PlayerController2D : MonoBehaviour
         }
 
         Move();
+        RotateTowardsMouse();
     }
 
     void SetTarget(Vector3 screenPos)
@@ -51,5 +52,20 @@ public class PlayerController2D : MonoBehaviour
         {
             isMoving = false;
         }
+    }
+
+    void RotateTowardsMouse()
+    {
+        Vector3 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+
+        // IMPORTANT for 2D
+        mousePos.z = 0f;
+
+        Vector2 direction = mousePos - transform.position;
+
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        // Rotate (Z axis for 2D)
+        transform.rotation = Quaternion.Euler(0, 0, angle - 90f);
     }
 }

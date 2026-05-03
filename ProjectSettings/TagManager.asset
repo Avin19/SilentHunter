@@ -15,7 +15,7 @@ TagManager:
   - Ground
   - Wall
   - Obstracle
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -53,6 +53,9 @@ TagManager:
     locked: 0
   - name: Collectable
     uniqueID: 3083366285
+    locked: 0
+  - name: Enemy
+    uniqueID: 605019291
     locked: 0
   - name: Player
     uniqueID: 1817869975

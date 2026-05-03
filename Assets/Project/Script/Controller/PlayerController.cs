@@ -20,6 +20,7 @@ public class PlayerController2D : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             SetTarget(Input.mousePosition);
+            //transform.right = cam.ScreenToWorldPoint(Input.mousePosition);
         }
 
         Move();
@@ -31,6 +32,8 @@ public class PlayerController2D : MonoBehaviour
         worldPos.z = 0f; // VERY IMPORTANT for 2D
 
         targetPosition = worldPos;
+
+
         isMoving = true;
     }
 

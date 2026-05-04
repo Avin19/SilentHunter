@@ -1,6 +1,6 @@
 using UnityEngine;
 using Pathfinding;
-
+using System.Collections;
 public class EnemyAi : MonoBehaviour
 {
     [Header("References")]
@@ -19,7 +19,16 @@ public class EnemyAi : MonoBehaviour
     [Header("Attack")]
     public int damage = 5;
     public float attackCooldown = 1f;
+    [Header("Flash")]
+    [SerializeField] private GameObject flashSprite;
+    [SerializeField] private float flashDuration = 0.05f;
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip alertClip;
+    public AudioClip deathClip;
+    public AudioClip shootClip;
 
+    private bool hasPlayedAlert;
     private Patrol patrol;
     private AIDestinationSetter chase;
     private AIPath aiPath;
@@ -33,6 +42,26 @@ public class EnemyAi : MonoBehaviour
     private float waitTimer;
 
     private Vector3 lastKnownPosition;
+    [SerializeField] private LevelManager levelManager;
+
+    [SerializeField] private GameObject coinSpawner;
+
+
+    void Shoot()
+    {
+        if (audioSource != null && shootClip != null)
+        {
+            audioSource.PlayOneShot(shootClip);
+        }
+        StartCoroutine(Flash());
+    }
+
+    IEnumerator Flash()
+    {
+        flashSprite.SetActive(true);
+        yield return new WaitForSeconds(flashDuration);
+        flashSprite.SetActive(false);
+    }
 
     void Start()
     {
@@ -128,6 +157,7 @@ public class EnemyAi : MonoBehaviour
         if (attackTimer <= 0f)
         {
             playerHealth.TakeDamage(damage);
+            Shoot();
             attackTimer = attackCooldown;
         }
     }
@@ -147,13 +177,19 @@ public class EnemyAi : MonoBehaviour
             case UnitState.Patrol:
                 patrol.enabled = true;
                 ShowAlert(false);
+                hasPlayedAlert = false;
                 break;
-
             case UnitState.Chasing:
                 chase.target = player;
                 chase.enabled = true;
 
                 ShowAlert(true);
+
+                if (!hasPlayedAlert)
+                {
+                    audioSource.PlayOneShot(alertClip);
+                    hasPlayedAlert = true;
+                }
                 break;
 
             case UnitState.Search:
@@ -196,7 +232,18 @@ public class EnemyAi : MonoBehaviour
     public void Die()
     {
         Debug.Log("💀 Enemy Died: " + name);
-        Destroy(gameObject);
+
+
+        audioSource.PlayOneShot(deathClip);
+        //spawn blood declay .
+        Instantiate(coinSpawner, new Vector3(transform.position.x, transform.position.y, 0f), Quaternion.identity);
+        levelManager.AddEnemyKilled();
+
+
+
+
+
+        Destroy(gameObject, 0.1f); // small delay for sound
     }
 }
 

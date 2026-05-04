@@ -45,6 +45,7 @@ public class LevelManager : MonoBehaviour
     internal void AddCoin()
     {
         coin++;
+        UpdateTheUI();
     }
 
 }

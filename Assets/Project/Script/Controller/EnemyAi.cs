@@ -239,11 +239,7 @@ public class EnemyAi : MonoBehaviour
         Instantiate(coinSpawner, new Vector3(transform.position.x, transform.position.y, 0f), Quaternion.identity);
         levelManager.AddEnemyKilled();
 
-
-
-
-
-        Destroy(gameObject, 0.1f); // small delay for sound
+        Destroy(gameObject, 0.5f); // small delay for sound
     }
 }
 

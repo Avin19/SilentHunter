@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: AdConfig
   m_EditorClassIdentifier: 
   bannerId: ca-app-pub-1779486678797596~1400870280
-  interstitialId: 
-  rewardedId: 
+  interstitialId: ca-app-pub-1779486678797596~1400870280
+  rewardedId: ca-app-pub-1779486678797596~1400870280
   enableGdprConsent: 1
   requestConsentOnStartup: 1
   loadBannerOnStart: 1
   autoShowBanner: 1
   bannerRetryInitialDelay: 30
   bannerRetryMaxDelay: 300
-  interstitialEveryNEvents: 2
-  interstitialCooldownSeconds: 60
+  interstitialEveryNEvents: 1
+  interstitialCooldownSeconds: 15
   preloadRewarded: 1
-  useTestAds: 1
+  useTestAds: 0

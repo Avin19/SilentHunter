@@ -9,9 +9,15 @@ public class LevelEnd : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (!level.AllEnemyKilled())
+            if (level.AllEnemyKilled())
             {
-                // Clear the Level
+
+                PlayerDataManager.Instance.data.level++;
+                PlayerDataManager.Instance.Save();
+                level.SetWinPanel(true);
+
+                // Pop Win
+
             }
         }
     }

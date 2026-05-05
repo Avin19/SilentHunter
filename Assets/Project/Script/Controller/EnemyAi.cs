@@ -238,8 +238,9 @@ public class EnemyAi : MonoBehaviour
         //spawn blood declay .
         Instantiate(coinSpawner, new Vector3(transform.position.x, transform.position.y, 0f), Quaternion.identity);
         levelManager.AddEnemyKilled();
+        PlayerDataManager.Instance.data.xp += 100;
 
-        Destroy(gameObject, 0.5f); // small delay for sound
+        Destroy(gameObject, 0.2f); // small delay for sound
     }
 }
 

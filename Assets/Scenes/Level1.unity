@@ -1567,6 +1567,9 @@ MonoBehaviour:
   isAllEnemyKilled: 0
   currentTarget: {fileID: 371928858}
   coinText: {fileID: 1842470152}
+  winpanel: {fileID: 844640541}
+  nextlevelBtn: {fileID: 1716687224}
+  mainmenuBtn: {fileID: 1292137923}
 --- !u!1001 &178502249
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4769,6 +4772,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 844640541}
     m_Modifications:
+    - target: {fileID: 2220769494597835007, guid: a4f015a08caee78478fd2f9633f1c467, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2220769494597835007, guid: a4f015a08caee78478fd2f9633f1c467, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2220769494597835007, guid: a4f015a08caee78478fd2f9633f1c467, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 844640540}
+    - target: {fileID: 2220769494597835007, guid: a4f015a08caee78478fd2f9633f1c467, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2220769494597835007, guid: a4f015a08caee78478fd2f9633f1c467, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 2220769494597835007, guid: a4f015a08caee78478fd2f9633f1c467, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2220769494597835007, guid: a4f015a08caee78478fd2f9633f1c467, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2234530023071323195, guid: a4f015a08caee78478fd2f9633f1c467, type: 3}
       propertyPath: m_Name
       value: CloseBtn
@@ -5756,7 +5787,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1106809249
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7002,6 +7033,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8672849966394900144, guid: 8b2974f84d9dea3449b3adcb1122fa6d, type: 3}
   m_PrefabInstance: {fileID: 1292137921}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1292137923 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1466424197499861954, guid: 8b2974f84d9dea3449b3adcb1122fa6d, type: 3}
+  m_PrefabInstance: {fileID: 1292137921}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1314647650
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8784,6 +8826,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8373923385167247055, guid: a843f3ddc42a83d42a40e14d358f8258, type: 3}
   m_PrefabInstance: {fileID: 1716687222}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1716687224 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6170217139237038310, guid: a843f3ddc42a83d42a40e14d358f8258, type: 3}
+  m_PrefabInstance: {fileID: 1716687222}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1753420729
 PrefabInstance:
   m_ObjectHideFlags: 0

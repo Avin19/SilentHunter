@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5814444644509499655}
   - component: {fileID: 8391748799997969454}
   - component: {fileID: 2606890357989098508}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Veritcal
   m_TagString: Untagged
   m_Icon: {fileID: 0}

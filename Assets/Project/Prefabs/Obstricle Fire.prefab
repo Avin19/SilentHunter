@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1273791214939166569}
   - component: {fileID: 16465777086190702}
   - component: {fileID: -4503216216563247099}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Obstricle Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}

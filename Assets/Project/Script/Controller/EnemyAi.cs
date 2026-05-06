@@ -23,7 +23,6 @@ public class EnemyAi : MonoBehaviour
     [SerializeField] private GameObject flashSprite;
     [SerializeField] private float flashDuration = 0.05f;
     [Header("Audio")]
-    public AudioSource audioSource;
     public AudioClip alertClip;
     public AudioClip deathClip;
     public AudioClip shootClip;
@@ -49,10 +48,7 @@ public class EnemyAi : MonoBehaviour
 
     void Shoot()
     {
-        if (audioSource != null && shootClip != null)
-        {
-            audioSource.PlayOneShot(shootClip);
-        }
+        AudioManager.Instance.PlayAudioInOneShot(shootClip);
         StartCoroutine(Flash());
     }
 
@@ -187,7 +183,7 @@ public class EnemyAi : MonoBehaviour
 
                 if (!hasPlayedAlert)
                 {
-                    audioSource.PlayOneShot(alertClip);
+                    AudioManager.Instance.PlayAudioInOneShot(alertClip);
                     hasPlayedAlert = true;
                 }
                 break;
@@ -234,7 +230,7 @@ public class EnemyAi : MonoBehaviour
         Debug.Log("💀 Enemy Died: " + name);
 
 
-        audioSource.PlayOneShot(deathClip);
+        AudioManager.Instance.PlayAudioInOneShot(deathClip);
         //spawn blood declay .
         Instantiate(coinSpawner, new Vector3(transform.position.x, transform.position.y, 0f), Quaternion.identity);
         levelManager.AddEnemyKilled();
